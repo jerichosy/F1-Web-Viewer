@@ -12,7 +12,7 @@
 [[redirects]]
   from = "/6657193977244c13"
   force = true
-  to = "https://api.formula1.com/6657193977244c13"
+  to = "https://api.formula1.com/6657193977244c13?d=account.formula1.com"
   status = 200
 
 [[redirects]]
