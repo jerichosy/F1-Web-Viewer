@@ -10,6 +10,12 @@
   directory = "functions"
 
 [[redirects]]
+  from = "/6657.js"
+  force = true
+  to = "https://api.formula1.com/6657193977244c13"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/"
   status = 200
