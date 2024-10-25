@@ -30,7 +30,7 @@ export default {
       );
     } else {
       document.cookie = "reese84=" + reece;
-      return axios.post(process.env.VUE_APP_NETLIFY ? "/.netlify/functions/server/authenticate" : "/authenticate", {
+      return axios.post(process.env.VUE_APP_NETLIFY_2 ? "/.netlify/functions/server/authenticate" : "/authenticate", {
         Login: username,
         Password: password,
       });
