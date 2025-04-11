@@ -138,7 +138,7 @@
             if (!process.env.IS_ELECTRON) {
               url = "/proxy/" + url;
             }
-            if (res.data.resultObj.streamType === "DASH" || res.data.resultObj.streamType === "DASHWV") {
+            if (res.data.resultObj.streamType === "DASH" || res.data.resultObj.streamType.endsWith("DASHWV")) {
               this.player.load({
                 dash: url,
                 drm: {
