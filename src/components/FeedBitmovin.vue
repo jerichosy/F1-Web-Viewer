@@ -63,8 +63,8 @@
       })
     },
     location: {
-      ui: 'https://cdn.bitmovin.com/player/web/8/bitmovinplayer-ui.js',
-      ui_css: 'https://cdn.bitmovin.com/player/web/8/bitmovinplayer-ui.css',
+      ui: 'https://cdn.jsdelivr.net/npm/bitmovin-player-ui@3/dist/js/bitmovinplayer-ui.js',
+      ui_css: 'https://cdn.jsdelivr.net/npm/bitmovin-player-ui@3/dist/css/bitmovinplayer-ui.css',
     },
   }
 
