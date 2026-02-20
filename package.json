@@ -37,7 +37,7 @@
     "helmet": "^4.4.1",
     "mobile-drag-drop": "^2.3.0-rc.2",
     "node-fetch": "^2.6.7",
-    "remixicon": "^2.5.0",
+    "remixicon": "^4.9.1",
     "serverless-http": "^2.7.0",
     "uuid": "^8.3.2",
     "video.js": "^7.19.0",
