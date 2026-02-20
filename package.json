@@ -35,7 +35,7 @@
     "electron-updater": "^4.3.9",
     "express": "^4.17.1",
     "helmet": "^4.4.1",
-    "mobile-drag-drop": "^2.3.0-rc.2",
+    "mobile-drag-drop": "^3.0.0-rc.0",
     "node-fetch": "^2.6.7",
     "remixicon": "^2.5.0",
     "serverless-http": "^2.7.0",
