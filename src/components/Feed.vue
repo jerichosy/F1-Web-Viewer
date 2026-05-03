@@ -121,10 +121,7 @@
         try {
           const res = await F1TV_API.getAuthenticatedUrl(this.playbackUrl, this.token);
           if (this.player && res.data?.resultObj?.url) {
-            let url = res.data.resultObj.url;
-            if (!process.env.IS_ELECTRON) {
-              url = "/proxy/" + url;
-            }
+            let url = "/proxy/" + res.data.resultObj.url;
             if (res.data.resultObj.streamType === "DASH" || res.data.resultObj.streamType === "DASHWV" || res.data.resultObj.streamType === "DASH6WV") {
               this.player.src({
                 src: url,

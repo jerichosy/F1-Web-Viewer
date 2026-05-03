@@ -13,28 +13,11 @@ const getVideoQuery = () => {
 
 export default {
   authenticate: (username, password, reece) => {
-    if (process.env.IS_ELECTRON) {
-      return axios.post(
-        "https://f1tokenx.deta.dev/authenticate", // required to send cookies
-        {
-          Login: username,
-          Password: password,
-        },
-        {
-          headers: {
-            apiKey: "fCUCjWrKPu9ylJwRAv8BpGLEgiAuThx7",
-            "Content-Type": "application/json",
-            "x-cookie": "reese84=" + reece,
-          }
-        }
-      );
-    } else {
-      document.cookie = "reese84=" + reece;
-      return axios.post(process.env.VUE_APP_NETLIFY_2 ? "/.netlify/functions/server/authenticate" : "/authenticate", {
-        Login: username,
-        Password: password,
-      });
-    }
+    document.cookie = "reese84=" + reece;
+    return axios.post(process.env.VUE_APP_NETLIFY_2 ? "/.netlify/functions/server/authenticate" : "/authenticate", {
+      Login: username,
+      Password: password,
+    });
   },
   getSeasons: () => {
     let seasons = [];

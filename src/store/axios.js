@@ -25,7 +25,7 @@ if (process.env.VUE_APP_NETLIFY) {
 
     return options;
   };
-} else if (!process.env.IS_ELECTRON) {
+} else {
   options.baseURL = "/proxy/" + API_URL;
 }
 
