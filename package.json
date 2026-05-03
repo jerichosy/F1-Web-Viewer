@@ -1,10 +1,10 @@
 {
   "name": "f1-web-viewer",
   "description": "A simple grid-based web viewer for Formula 1",
-  "author": "bootsie123 / iebb",
-  "version": "2.1.2",
+  "author": "bootsie123 / iebb (fork by jerichosy)",
+  "version": "2.1.2-jerichosy",
   "private": true,
-  "homepage": "https://github.com/iebb/F1-Web-Viewer",
+  "homepage": "https://github.com/jerichosy/F1-Web-Viewer",
   "scripts": {
     "start": "node functions/server.js",
     "dev": "nodemon functions/server.js",
