@@ -6,10 +6,7 @@ import deepClone from "@/lib/deepClone";
 
 Vue.use(Vuex);
 
-const isElectron = process.env.isElectron;
-
-let store;
-let savedState = {
+const savedState = {
   layouts: JSON.parse(localStorage.getItem("layouts")),
   layout: JSON.parse(localStorage.getItem("layout")),
   token: localStorage.getItem("token"),
@@ -19,28 +16,8 @@ let savedState = {
   playerType: localStorage.getItem("playerType"),
 };
 
-if (isElectron) {
-  const Store = import("electron-store");
-
-  store = new Store();
-
-  savedState = {
-    layouts: store.get("layouts"),
-    layout: store.get("layout"),
-    token: store.get("token"),
-    layoutColumns: store.get("layoutColumns"),
-    layoutRowHeight: store.get("layoutRowHeight"),
-    streamType: store.get("streamType"),
-    playerType: store.get("playerType"),
-  };
-}
-
-const updateStore = (key, local, electron) => {
+const updateStore = (key, local) => {
   localStorage.setItem(key, local);
-
-  if (isElectron) {
-    store.set(key, electron || local);
-  }
 };
 
 export default new Vuex.Store({
@@ -191,10 +168,6 @@ export default new Vuex.Store({
     },
     logout(state) {
       localStorage.removeItem("token");
-
-      if (isElectron) {
-        store.delete("token");
-      }
 
       state.token = "";
       state.authError = "";

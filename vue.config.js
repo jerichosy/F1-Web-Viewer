@@ -21,30 +21,5 @@ module.exports = {
       }
     }
   },
-  pluginOptions: {
-    electronBuilder: {
-      outputDir: "./dist/electron",
-      nodeIntegration: true,
-      builderOptions: {
-        appId: "app.netlify.f1webviewer",
-        productName: "F1 Web Viewer",
-        publish: ["github"],
-        win: {
-          target: ["nsis"]
-        },
-        mac: {
-          category: "public.app-category.sports",
-          target: ["dmg"]
-        },
-        linux: {
-          category: "AudioVideo",
-          target: ["AppImage"]
-        },
-        directories: {
-          buildResources: "build"
-        }
-      }
-    }
-  },
   transpileDependencies: ["vue-grid-layout"]
 };

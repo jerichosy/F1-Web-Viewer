@@ -33,38 +33,6 @@ jobs:
             -t iebb/f1-web-viewer:v$(node -p -e "require('./package.json').version") \
             . \
 
-  electron-release-osx:
-    macos:
-      xcode: 13.2.1
-    environment:
-      ELECTRON_CACHE: $HOME/.cache/electron
-      ELECTRON_BUILDER_CACHE: $HOME/.cache/electron-builder
-    steps:
-      - checkout
-      - node/install:
-          node-version: "14.2.0"
-      - run:
-          name: Node version
-          command: node --version && npm --version
-      - run:
-          name: Install node modules
-          command: npm ci --include=dev
-      - run:
-          name: NPM build
-          command: npm run build
-      - run:
-          name: Electron release (OSX)
-          command: npm run release
-
-  electron-release-linux-win:
-    docker:
-      - image: electronuserland/builder:wine
-    steps:
-      - checkout
-      - run:
-          name: Electron release (LINUX, WIN)
-          command: yarn --link-duplicates --pure-lockfile && yarn release --linux --win
-
 workflows:
   docker-release:
     jobs:
@@ -74,17 +42,3 @@ workflows:
               only:
                 - production
           context: DockerHub
-  electron-release:
-    jobs:
-      - electron-release-linux-win:
-          filters:
-            branches:
-              only:
-                - production
-          context: GitHub
-      - electron-release-osx:
-          filters:
-            branches:
-              only:
-                - production
-          context: GitHub
