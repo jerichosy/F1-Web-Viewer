@@ -125,15 +125,15 @@ export default new Vuex.Store({
     updateLayouts(state, layouts) {
       state.layouts = layouts;
 
-      updateStore("layouts", JSON.stringify(layouts), layouts);
+      updateStore("layouts", JSON.stringify(layouts));
     },
     saveLayout(state, layout) {
-      updateStore("layout", JSON.stringify(layout), layout);
+      updateStore("layout", JSON.stringify(layout));
     },
     setItem(state, { index, key, value }) {
       state.layout[index][key] = value;
 
-      updateStore("layout", JSON.stringify(state.layout), state.layout);
+      updateStore("layout", JSON.stringify(state.layout));
     },
     setLayoutColumns(state, columns) {
       state.layoutColumns = columns;
