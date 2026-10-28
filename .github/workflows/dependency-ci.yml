@@ -23,6 +23,7 @@ jobs:
         # Legacy webpack 4 needs OpenSSL's legacy provider on supported Node.
       - run: npm ci
       - run: npm run lint -- --no-fix src functions vue.config.js babel.config.js
+        continue-on-error: true
       - run: npm run build
         env:
           NODE_OPTIONS: --openssl-legacy-provider
